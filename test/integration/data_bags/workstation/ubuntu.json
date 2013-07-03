@@ -1,0 +1,11 @@
+{
+  "id": "ubuntu",
+
+  "pip_packages": {
+    "Pygments": {}
+  },
+
+  "system_packages": {
+    "ack": {}
+  }
+}
