@@ -1,0 +1,33 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    celluloid (0.14.1)
+      timers (>= 1.0.0)
+    coderay (1.0.9)
+    method_source (0.8.1)
+    mixlib-shellout (1.1.0)
+    net-scp (1.1.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.7)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    safe_yaml (0.9.3)
+    slop (3.4.5)
+    test-kitchen (1.0.0.alpha.7)
+      celluloid
+      mixlib-shellout
+      net-scp
+      net-ssh
+      pry
+      safe_yaml
+      thor
+    thor (0.18.1)
+    timers (1.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  test-kitchen (~> 1.0.0.alpha.7)
