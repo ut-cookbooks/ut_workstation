@@ -1,7 +1,8 @@
 if platform?("mac_os_x")
   include_recipe "homebrew"
-
   homebrew_tap "homebrew/dupes"
+
+  include_recipe "xquartz"
 end
 
 # install additional packages for the platform
