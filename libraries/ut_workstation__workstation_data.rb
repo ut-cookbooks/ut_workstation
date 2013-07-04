@@ -3,15 +3,15 @@ module UTWorkstation
   module Helpers
 
     def workstation_data
-      node.run_state["workstation_data"] ||= Hash.new
+      node.run_state["workstation_data"]
     end
 
     def workstation_users
-      node.run_state["workstation_users"] ||= Hash.new
+      node.run_state["workstation_users"]
     end
 
     def load_workstation_data!
-      workstation_data = begin
+      node.run_state["workstation_data"] = begin
         data_bag_item('workstation', node['platform']).to_hash
       rescue => ex
         Hash.new
@@ -19,6 +19,7 @@ module UTWorkstation
     end
 
     def load_workstation_users!
+      node.run_state["workstation_users"] = Hash.new
       Array(user_array).each do |username|
         workstation_users[username] = user_data(username)
       end
