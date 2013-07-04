@@ -17,3 +17,6 @@ suites:
 - name: default
   run_list:
   - recipe[ut_workstation]
+  attributes:
+    users:
+    - jdoe

@@ -1,0 +1,21 @@
+{
+  "id": "jdoe",
+
+  "bashrc": true,
+
+  "homesick_castles": [
+    { "name"    : "dotvim",
+      "source"  : "git://github.com/fnichol/dotvim.git"
+    },
+    { "name"    : "dotfiles",
+      "source"  : "git://github.com/fnichol/dotfiles.git",
+      "action"  : "update"
+    }
+  ],
+
+  "chruby": {
+    "rubies": {
+      "1.8.7-p374": { "default": true }
+    }
+  }
+}
