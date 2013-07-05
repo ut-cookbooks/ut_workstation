@@ -2,7 +2,7 @@ site :opscode
 
 metadata
 
-cookbook 'bashrc', git: 'https://github.com/fnichol/chef-bashrc.git', ref: 'v0.3.2'
+cookbook 'bashrc', git: 'https://github.com/fnichol/chef-bashrc.git', ref: 'v0.3.4'
 
 # adds support for per-user defaults, pending release of new cookbook
 cookbook 'mac_os_x', git: 'https://github.com/jtimberman/mac_os_x-cookbook.git', ref: '5055975f967e4fcc4c5d733a5bc6257e3adbff2c'
