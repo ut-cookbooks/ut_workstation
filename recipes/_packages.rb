@@ -3,6 +3,8 @@ if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"
 
   include_recipe "xquartz"
+elsif platform_family?("debian")
+  include_recipe "apt"
 end
 
 # install additional packages for the platform

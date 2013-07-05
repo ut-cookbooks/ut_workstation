@@ -10,6 +10,7 @@ supports "mac_os_x"
 supports "ubuntu"
 supports "debian"
 
+depends "apt"
 depends "bashrc"
 depends "chruby"
 depends "dmg"
