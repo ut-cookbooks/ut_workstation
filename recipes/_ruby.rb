@@ -17,30 +17,34 @@ end
 
 chruby_installs.each do |chruby|
   (chruby['rubies'] || Hash.new).each_pair do |ruby, flag_or_opts|
-    user_home       = Etc.getpwnam(chruby['user']).dir
-    default_prefix  = ::File.join(user_home, ".rubies", ruby)
-    default_group   = Etc.getgrgid(Etc.getpwnam(chruby['user']).gid).name
-    opts            = flag_or_opts.is_a?(Hash) ? flag_or_opts : Hash.new
+    opts = flag_or_opts.is_a?(Hash) ? flag_or_opts : Hash.new
 
-    ruby_build_ruby "Ruby #{ruby} (#{chruby['user']})" do
-      definition  ruby
-      prefix_path (opts['prefix_path'] || default_prefix)
-      user        chruby['user']
-      group       (opts['group'] || default_group)
+    # delay evaluating the ruby_build_ruby resource until after the users are
+    # created, this way we can compute a user's home directory and group
+    ruby_block "Ruby #{ruby} (#{chruby['user']})" do
+      block do
+        user_home       = Etc.getpwnam(chruby['user']).dir
+        default_prefix  = ::File.join(user_home, ".rubies", ruby)
+        default_group   = Etc.getgrgid(Etc.getpwnam(chruby['user']).gid).name
 
-      %w{environment action}.each do |attr|
-        send(attr, opts[attr]) if opts[attr]
+        r = Chef::Resource::RubyBuildRuby.new("#{ruby} (#{chruby['user']})",
+          run_context)
+        r.definition(ruby)
+        r.prefix_path(opts['prefix_path'] || default_prefix)
+        r.user(chruby['user'])
+        r.group(opts['group'] || default_group)
+        %w{environment action}.each do |attr|
+          r.send(attr, opts[attr]) if opts[attr]
+        end
+        r.run_action(:install) if !flag_or_opts.nil? && !flag_or_opts == false
+
+        r = Chef::Resource::File.new(::File.join(user_home, ".ruby-version"),
+          run_context)
+        r.user(chruby['user'])
+        r.group(default_group)
+        r.content("#{ruby}\n")
+        r.run_action(:create) if opts['default'] == true
       end
-
-      not_if { flag_or_opts.nil? || flag_or_opts == false }
-    end
-
-    file ::File.join(user_home, ".ruby-version") do
-      user    chruby['user']
-      group   default_group
-      content "#{ruby}\n"
-
-      only_if { opts['default'] == true }
     end
   end
 end
