@@ -4,6 +4,12 @@ chruby_installs = workstation_users.select { |user, data|
   { 'user' => user }.merge(data['chruby'])
 }
 
+# until new release of chruby cookbook containing:
+# https://github.com/Atalanta/chef-chruby/pull/8
+directory "/etc/profile.d" do
+  recursive true
+end
+
 if !chruby_installs.empty?
   include_recipe "chruby"
   include_recipe "ruby_build"
