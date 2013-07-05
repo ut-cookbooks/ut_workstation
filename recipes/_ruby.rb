@@ -12,6 +12,7 @@ end
 
 if !chruby_installs.empty?
   include_recipe "chruby"
+  include_recipe "chgems"
   include_recipe "ruby_build"
 end
 

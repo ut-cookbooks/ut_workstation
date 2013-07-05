@@ -12,6 +12,7 @@ supports "debian"
 
 depends "apt"
 depends "bashrc"
+depends "chgems"
 depends "chruby"
 depends "dmg"
 depends "homebrew"
