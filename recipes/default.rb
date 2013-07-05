@@ -2,6 +2,7 @@ Chef::Recipe.send(:include, UTWorkstation::Helpers)
 
 # system-wide
 include_recipe "ut_workstation::_packages"
+include_recipe "ut_workstation::_vagrant"
 include_recipe "ut_workstation::_python"
 include_recipe "ut_workstation::_defaults"
 
