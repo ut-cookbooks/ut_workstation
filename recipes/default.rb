@@ -8,6 +8,6 @@ include_recipe "ut_workstation::_defaults"
 
 # per-user
 include_recipe "ut_workstation::_users"
-include_recipe "ut_workstation::_homesick"
 include_recipe "ut_workstation::_bashrc"
+include_recipe "ut_workstation::_homesick"
 include_recipe "ut_workstation::_ruby"
