@@ -23,6 +23,7 @@ if platform?("mac_os_x")
 
   include_recipe "xquartz"
 elsif platform_family?("debian")
+  include_recipe "ubuntu" if platform?("ubuntu")
   include_recipe "apt"
 end
 
