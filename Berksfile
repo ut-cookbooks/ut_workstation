@@ -12,3 +12,8 @@ cookbook 'homebrew', git: 'https://github.com/fnichol/homebrew-cookbook.git', re
 
 # fixes .mpkg -> .pkg extension change, pending release of new cookbook version
 cookbook 'virtualbox', git: 'https://github.com/peplin/virtualbox-cookbook.git', ref: 'd1f4c4db122376da0fa74f145e1fbbb0c9af95c1'
+
+# pending the merging of:
+# * https://github.com/Atalanta/chef-chruby/pull/8
+# * https://github.com/Atalanta/chef-chruby/pull/9
+cookbook 'chruby', git: 'https://github.com/fnichol/chef-chruby.git', ref: 'fnichol-stable'
