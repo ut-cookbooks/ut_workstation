@@ -69,7 +69,7 @@ Chef repository structure like the [Opscode repo][chef_repo] is also assumed.
 
 To install this cookbook from the Community Site, use the *knife* command:
 
-    knife cookbook site install chgems
+    knife cookbook site install ut_workstation
 
 ### <a name="installation-berkshelf"></a> Using Berkshelf
 
