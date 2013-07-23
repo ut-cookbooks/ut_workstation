@@ -22,6 +22,7 @@ depends "mac_os_x"    # forked version
 depends "ubuntu",     '~> 1.1.2'
 depends "user",       '~> 0.3.0'
 depends "python",     '~> 1.3.4'
+depends "ruby_build", '~> 0.8.0'
 depends "xquartz",    '~> 1.0.0'
 depends "vagrant",    '~> 0.2.0'
 depends "virtualbox"  # forked version
