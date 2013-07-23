@@ -42,18 +42,18 @@ Please [report][issues] any additional platforms so they can be added.
 This cookbook depends on the following external cookbooks:
 
 * [apt][apt_cb]
-* [bashrc][bashrc_cb]
+* [bashrc][bashrc_cb] (via Git)
 * [chgems][chgems_cb]
-* [chruby][chruby_cb]
+* [chruby][chruby_cb] (currently forked)
 * [dmg][dmg_cb]
-* [homebrew][homebrew_cb]
+* [homebrew][homebrew_cb] (currently forked)
 * [homesick][homesick_cb]
-* [mac_os_x][mac_os_x_cb]
+* [mac_os_x][mac_os_x_cb] (currently forked)
 * [user][user_cb]
 * [python][python_cb]
 * [xquartz][xquartz_cb]
 * [vagrant][vagrant_cb]
-* [virtualbox][virtualbox_cb]
+* [virtualbox][virtualbox_cb] (currently forked)
 * [zip_app][zip_app_cb]
 
 ## <a name="installation"></a> Installation
@@ -175,7 +175,7 @@ limitations under the License.
 [mac_os_x_cb]:    http://community.opscode.com/cookbooks/mac_os_x
 [user_cb]:        http://community.opscode.com/cookbooks/user
 [python_cb]:      http://community.opscode.com/cookbooks/python
-[xquartz]:        http://community.opscode.com/cookbooks/xquartz
+[xquartz_cb]:     http://community.opscode.com/cookbooks/xquartz
 [vagrant_cb]:     http://community.opscode.com/cookbooks/vagrant
 [virtualbox_cb]:  http://community.opscode.com/cookbooks/virtualbox
 [zip_app_cb]:     http://community.opscode.com/cookbooks/zip_app

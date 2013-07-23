@@ -8,12 +8,10 @@ cookbook 'bashrc', git: 'https://github.com/fnichol/chef-bashrc.git', ref: 'v0.3
 cookbook 'mac_os_x', git: 'https://github.com/jtimberman/mac_os_x-cookbook.git', ref: '5055975f967e4fcc4c5d733a5bc6257e3adbff2c'
 
 # add support for running chef as root or with sudo, pending release of new cookbook
-cookbook 'homebrew', git: 'https://github.com/fnichol/homebrew-cookbook.git', ref: 'non-root-and-sudo-support'
+cookbook 'homebrew', git: 'https://github.com/opscode-cookbook/homebrew.git', ref: 'c1d0e4ffcb6bddc9de68367f5ad2885a591a60e8'
 
-# fixes .mpkg -> .pkg extension change, pending release of new cookbook version
+# fixes .mpkg -> .pkg extension change, pending release of new cookbook
 cookbook 'virtualbox', git: 'https://github.com/peplin/virtualbox-cookbook.git', ref: 'd1f4c4db122376da0fa74f145e1fbbb0c9af95c1'
 
-# pending the merging of:
-# * https://github.com/Atalanta/chef-chruby/pull/8
-# * https://github.com/Atalanta/chef-chruby/pull/9
-cookbook 'chruby', git: 'https://github.com/fnichol/chef-chruby.git', ref: 'fnichol-stable'
+# adds support for creating profile.d dir & removing default chruby call, pending release of new cookbook
+cookbook 'chruby', git: 'https://github.com/Atalanta/chef-chruby.git', ref: '48398b709e7bf6840995c7ec59968de1da19722c'
