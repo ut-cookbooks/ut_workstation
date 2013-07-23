@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: ut_workstation
-# Recipe:: default
+# Recipe:: _mosh
 #
 # Copyright 2013, Fletcher Nichol
 #
@@ -17,17 +17,4 @@
 # limitations under the License.
 #
 
-Chef::Recipe.send(:include, UTWorkstation::Helpers)
-
-# system-wide
-include_recipe "ut_workstation::_packages"
-include_recipe "ut_workstation::_mosh"
-include_recipe "ut_workstation::_vagrant"
-include_recipe "ut_workstation::_python"
-include_recipe "ut_workstation::_defaults"
-
-# per-user
-include_recipe "ut_workstation::_users"
-include_recipe "ut_workstation::_bashrc"
-include_recipe "ut_workstation::_homesick"
-include_recipe "ut_workstation::_ruby"
+include_recipe "mosh"

@@ -49,6 +49,7 @@ This cookbook depends on the following external cookbooks:
 * [homebrew][homebrew_cb] (currently forked)
 * [homesick][homesick_cb]
 * [mac_os_x][mac_os_x_cb] (currently forked)
+* [mosh][mosh_cb]
 * [user][user_cb]
 * [python][python_cb]
 * [ruby_build][ruby_build_cb]
@@ -174,6 +175,7 @@ limitations under the License.
 [homebrew_cb]:    http://community.opscode.com/cookbooks/homebrew
 [homesick_cb]:    http://community.opscode.com/cookbooks/homesick
 [mac_os_x_cb]:    http://community.opscode.com/cookbooks/mac_os_x
+[mosh_cb]:        http://community.opscode.com/cookbooks/mosh
 [user_cb]:        http://community.opscode.com/cookbooks/user
 [python_cb]:      http://community.opscode.com/cookbooks/python
 [ruby_build_cb]:  http://community.opscode.com/cookbooks/ruby_build
