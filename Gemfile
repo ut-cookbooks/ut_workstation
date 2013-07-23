@@ -1,6 +1,11 @@
 source "https://rubygems.org"
 
-gem 'emeril', '~> 0.6.0'
+gem 'rake'
+gem 'foodcritic'
+
+group :development do
+  gem 'emeril', '~> 0.6.0'
+end
 
 group :integration do
   gem 'berkshelf'
