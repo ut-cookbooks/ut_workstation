@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: ut_workstation
-# Recipe:: _mosh
+# Recipe:: _base
 #
 # Copyright 2013, Fletcher Nichol
 #
@@ -17,4 +17,4 @@
 # limitations under the License.
 #
 
-include_recipe "mosh"
+include_recipe "ut_base"

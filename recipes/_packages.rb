@@ -18,13 +18,11 @@
 #
 
 if platform?("mac_os_x")
-  include_recipe "homebrew"
   homebrew_tap "homebrew/dupes"
 
   include_recipe "xquartz"
 elsif platform_family?("debian")
   include_recipe "ubuntu" if platform?("ubuntu")
-  include_recipe "apt"
 end
 
 # install additional packages for the platform
