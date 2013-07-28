@@ -51,6 +51,7 @@ This cookbook depends on the following external cookbooks:
 * [mac_os_x][mac_os_x_cb] (currently forked)
 * [mosh][mosh_cb]
 * [user][user_cb]
+* [ut_base][ut_base_cb]
 * [python][python_cb]
 * [ruby_build][ruby_build_cb]
 * [xquartz][xquartz_cb]
@@ -177,6 +178,7 @@ limitations under the License.
 [mac_os_x_cb]:    http://community.opscode.com/cookbooks/mac_os_x
 [mosh_cb]:        http://community.opscode.com/cookbooks/mosh
 [user_cb]:        http://community.opscode.com/cookbooks/user
+[ut_base_cb]:     http://community.opscode.com/cookbooks/ut_base
 [python_cb]:      http://community.opscode.com/cookbooks/python
 [ruby_build_cb]:  http://community.opscode.com/cookbooks/ruby_build
 [xquartz_cb]:     http://community.opscode.com/cookbooks/xquartz
