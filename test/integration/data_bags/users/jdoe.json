@@ -1,6 +1,8 @@
 {
   "id": "jdoe",
 
+  "groups": ["admin"],
+
   "bashrc": true,
 
   "homesick_castles": [
