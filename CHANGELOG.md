@@ -1,3 +1,10 @@
+## 1.0.4 / 2013-08-19
+
+### Improvements
+
+* Bump chruby to 0.3.7. ([@fnichol][])
+
+
 ## 1.0.2 / 2013-07-28
 
 ### Improvements
