@@ -17,5 +17,5 @@
 # limitations under the License.
 #
 
-node.set['chruby']['version'] = '0.3.6'
+node.set['chruby']['version'] = '0.3.7'
 node.set['chruby']['default'] = false
