@@ -43,20 +43,18 @@ This cookbook depends on the following external cookbooks:
 
 * [apt][apt_cb]
 * [bashrc][bashrc_cb] (via Git)
-* [chgems][chgems_cb]
 * [chruby][chruby_cb] (currently forked)
 * [dmg][dmg_cb]
-* [homebrew][homebrew_cb] (currently forked)
+* [homebrew][homebrew_cb]
 * [homesick][homesick_cb]
 * [mac_os_x][mac_os_x_cb] (currently forked)
-* [mosh][mosh_cb]
 * [user][user_cb]
 * [ut_base][ut_base_cb]
 * [python][python_cb]
 * [ruby_build][ruby_build_cb]
-* [xquartz][xquartz_cb]
-* [vagrant][vagrant_cb]
-* [virtualbox][virtualbox_cb] (currently forked)
+* [xquartz][xquartz_cb] (currently forked)
+* [vagrant][vagrant_cb] (currently forked)
+* [virtualbox][virtualbox_cb]
 * [zip_app][zip_app_cb]
 
 ## <a name="installation"></a> Installation
@@ -170,13 +168,11 @@ limitations under the License.
 
 [apt_cb]:         http://community.opscode.com/cookbooks/apt
 [bashrc_cb]:      https://github.com/fnichol/chef-bashrc
-[chgems_cb]:      http://community.opscode.com/cookbooks/chgems
 [chruby_cb]:      http://community.opscode.com/cookbooks/chruby
 [dmg_cb]:         http://community.opscode.com/cookbooks/dmg
 [homebrew_cb]:    http://community.opscode.com/cookbooks/homebrew
 [homesick_cb]:    http://community.opscode.com/cookbooks/homesick
 [mac_os_x_cb]:    http://community.opscode.com/cookbooks/mac_os_x
-[mosh_cb]:        http://community.opscode.com/cookbooks/mosh
 [user_cb]:        http://community.opscode.com/cookbooks/user
 [ut_base_cb]:     http://community.opscode.com/cookbooks/ut_base
 [python_cb]:      http://community.opscode.com/cookbooks/python
