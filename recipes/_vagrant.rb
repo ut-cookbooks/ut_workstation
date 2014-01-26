@@ -17,10 +17,7 @@
 # limitations under the License.
 #
 
-if workstation_data['vagrant'] && workstation_data['vagrant']['url']
-  node.set['vagrant']['url']      = workstation_data['vagrant']['url']
-  node.set['vagrant']['checksum'] = workstation_data['vagrant']['checksum']
-
+if workstation_data['install_vagrant']
   include_recipe "vagrant"
 else
   Chef::Log.warn("Vagrant url not set so not installing Vagrant")

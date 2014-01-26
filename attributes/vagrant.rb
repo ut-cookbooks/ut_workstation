@@ -18,3 +18,4 @@
 #
 
 node.default['ut_workstation']['install_virtualbox'] = true
+node.default['ut_workstation']['install_vagrant'] = true
