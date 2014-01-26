@@ -1,7 +1,6 @@
 ---
-driver_plugin: vagrant
-driver_config:
-  require_chef_omnibus: true
+driver:
+  name: vagrant
 
 platforms:
 - name: ubuntu-13.04
