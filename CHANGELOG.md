@@ -1,3 +1,16 @@
+## 1.1.0 / 2014-01-26
+
+### New features
+
+* Add Homebrew tap support. ([@fnichol][])
+
+### Improvements
+
+* Update to chruby 0.3.8. ([@fnichol][])
+* Update to Vagrant 1.4.3. ([@fnichol][])
+* Update to VirtualBox 4.3.6. ([@fnichol][])
+
+
 ## 1.0.4 / 2013-08-19
 
 ### Improvements
