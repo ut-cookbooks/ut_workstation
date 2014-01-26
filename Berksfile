@@ -24,3 +24,7 @@ cookbook 'vagrant', git: 'https://github.com/atomic-penguin/vagrant-cookbook.git
 # adds support for xquartz 2.7.5, pending release of new cookbook
 # * https://github.com/jtimberman/xquartz-cookbook/pull/4
 cookbook 'xquartz', git: 'https://github.com/jtimberman/xquartz-cookbook.git', ref: '2b2f8828d77ce79834a3ba9314c19737158511a3'
+
+# adds support for configurable packages deps, pending release of new cookbook
+# * https://github.com/opscode-cookbooks/ark/pull/46
+cookbook 'ark', git: 'https://github.com/fnichol/ark.git', ref: 'configurable-pkg-deps'

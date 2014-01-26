@@ -12,6 +12,7 @@ supports "debian"
 
 # please see Berksfile for any special/specific versions or forks
 depends "apt",        '~> 2.0'
+depends "ark"         # forked version
 depends "bashrc"      # via git
 depends "chruby"      # forked version
 depends "dmg",        '~> 2.1'
