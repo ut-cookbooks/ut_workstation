@@ -19,7 +19,7 @@ cookbook 'xcode', git: 'https://github.com/fnichol/xcode.git', ref: 'mac-10.7-su
 
 # adds support for vagrant 1.4.3+, pending release of new cookbook
 # * https://github.com/jtimberman/vagrant-cookbook/pull/3
-cookbook 'vagrant', git: 'https://github.com/atomic-penguin/vagrant-cookbook.git', ref: '3c3591701ff4d94d487a48e47c22443678b70656'
+cookbook 'vagrant', git: 'https://github.com/fnichol/vagrant-cookbook.git', ref: 'atomic-penguin-pr-3'
 
 # adds support for xquartz 2.7.5, pending release of new cookbook
 # * https://github.com/jtimberman/xquartz-cookbook/pull/4

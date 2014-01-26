@@ -11,8 +11,5 @@ suites:
   run_list:
   - recipe[ut_workstation]
   attributes:
-    ut_workstation:
-      install_virtualbox: false
-      install_vagrant: false
     users:
     - vagrant
