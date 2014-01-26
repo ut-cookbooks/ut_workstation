@@ -23,7 +23,7 @@ depends "ubuntu",     '~> 1.1'
 depends "user",       '~> 0.3.0'
 depends "ut_base",    '~> 1.2'
 depends "python",     '~> 1.3'
-depends "ruby_build", '~> 0.8.0'
+depends "ruby_install", '~> 0.1'
 depends "xquartz"     # forked version
 depends "vagrant"     # forked version
 depends "virtualbox", '~> 1.0'

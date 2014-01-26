@@ -25,7 +25,7 @@ chruby_installs = workstation_users.select { |user, data|
 
 if !chruby_installs.empty?
   include_recipe "chruby"
-  include_recipe "ruby_build"
+  include_recipe "ruby_install"
 end
 
 chruby_installs.each do |chruby|
@@ -40,9 +40,9 @@ chruby_installs.each do |chruby|
         default_prefix  = ::File.join(user_home, ".rubies", ruby)
         default_group   = Etc.getgrgid(Etc.getpwnam(chruby['user']).gid).name
 
-        r = Chef::Resource::RubyBuildRuby.new("#{ruby} (#{chruby['user']})",
+        r = Chef::Resource::RubyInstallRuby.new("#{ruby} (#{chruby['user']})",
           run_context)
-        r.definition(ruby)
+        r.definition(ruby.sub('-', ' '))
         r.prefix_path(opts['prefix_path'] || default_prefix)
         r.user(chruby['user'])
         r.group(opts['group'] || default_group)

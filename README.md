@@ -51,7 +51,7 @@ This cookbook depends on the following external cookbooks:
 * [user][user_cb]
 * [ut_base][ut_base_cb]
 * [python][python_cb]
-* [ruby_build][ruby_build_cb]
+* [ruby_install][ruby_install_cb]
 * [xquartz][xquartz_cb] (currently forked)
 * [vagrant][vagrant_cb] (currently forked)
 * [virtualbox][virtualbox_cb]
@@ -176,7 +176,7 @@ limitations under the License.
 [user_cb]:        http://community.opscode.com/cookbooks/user
 [ut_base_cb]:     http://community.opscode.com/cookbooks/ut_base
 [python_cb]:      http://community.opscode.com/cookbooks/python
-[ruby_build_cb]:  http://community.opscode.com/cookbooks/ruby_build
+[ruby_install_cb]: http://community.opscode.com/cookbooks/ruby_install
 [xquartz_cb]:     http://community.opscode.com/cookbooks/xquartz
 [vagrant_cb]:     http://community.opscode.com/cookbooks/vagrant
 [virtualbox_cb]:  http://community.opscode.com/cookbooks/virtualbox
