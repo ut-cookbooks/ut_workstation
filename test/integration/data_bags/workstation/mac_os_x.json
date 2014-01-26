@@ -1,0 +1,16 @@
+{
+  "id": "mac_os_x",
+
+  "pip_packages": {
+    "Pygments": {}
+  },
+
+  "homebrew_taps": {
+    "homebrew/binary": {}
+  },
+
+  "system_packages": {
+    "docker": {}
+  }
+}
+

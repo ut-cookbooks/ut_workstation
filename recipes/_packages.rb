@@ -20,6 +20,14 @@
 if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"
 
+  workstation_data.fetch('homebrew_taps', Hash.new).each_pair do |name, attrs|
+    homebrew_tap name do
+      %w{action}.each do |attr|
+        send(attr, attrs[attr]) if attrs[attr]
+      end
+    end
+  end
+
   include_recipe "xquartz"
 elsif platform_family?("debian")
   include_recipe "ubuntu" if platform?("ubuntu")
