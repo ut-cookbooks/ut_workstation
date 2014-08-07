@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-bashrc_installs = workstation_users.select { |user, data|
+bashrc_installs = workstation_users.select { |_user, data|
   !data['bashrc'].nil? && !data['bashrc'] == false
 }.map { |user, data|
   { 'user' => user, 'update' => true }.

@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-chruby_installs = workstation_users.select { |user, data|
+chruby_installs = workstation_users.select { |_user, data|
   !data['chruby'].nil? && !data['chruby'] == false
 }.map { |user, data|
   { 'user' => user }.merge(data['chruby'])
