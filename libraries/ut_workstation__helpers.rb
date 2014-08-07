@@ -31,7 +31,7 @@ module UTWorkstation
 
     def load_workstation_data!
       node.run_state["workstation_data"] = begin
-        data_bag_item('workstation', node['platform']).to_hash
+        data_bag_item("workstation", node["platform"]).to_hash
       rescue
         Hash.new
       end
@@ -47,14 +47,14 @@ module UTWorkstation
     private
 
     # Fetch the user array from the node's attribute hash. If a subhash is
-    # desired (ex. node['base']['user_accounts']), then set:
+    # desired (ex. node["base"]["user_accounts"]), then set:
     #
-    #     node['user']['user_array_node_attr'] = "base/user_accounts"
+    #     node["user"]["user_array_node_attr"] = "base/user_accounts"
     #
     def user_array
       @user_array ||= begin
         user_array = node
-        node['user']['user_array_node_attr'].split("/").each do |hash_key|
+        node["user"]["user_array_node_attr"].split("/").each do |hash_key|
           user_array = user_array.send(:[], hash_key)
         end
         user_array
@@ -62,7 +62,7 @@ module UTWorkstation
     end
 
     def user_data(username)
-      data_bag_item(node['user']['data_bag_name'], username).to_hash
+      data_bag_item(node["user"]["data_bag_name"], username).to_hash
     rescue
       Hash.new
     end

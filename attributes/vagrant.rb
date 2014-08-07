@@ -17,8 +17,8 @@
 # limitations under the License.
 #
 
-node.default['ut_workstation']['virtualbox']['dmg'] =
+node.default["ut_workstation"]["virtualbox"]["dmg"] =
   "http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-OSX.dmg"
 
-node.default['ut_workstation']['install_virtualbox'] = true
-node.default['ut_workstation']['install_vagrant'] = true
+node.default["ut_workstation"]["install_virtualbox"] = true
+node.default["ut_workstation"]["install_vagrant"] = true

@@ -25,5 +25,5 @@ load_workstation_users!
 
 if platform?("mac_os_x")
   include_attribute "ark"
-  node.set['ark']['tar'] = "/usr/bin/tar"
+  node.set["ark"]["tar"] = "/usr/bin/tar"
 end

@@ -21,5 +21,5 @@ if platform_family?("mac_os_x")
   node.set["virtualbox"]["url"] = node["ut_workstation"]["virtualbox"]["dmg"]
 end
 
-include_recipe "virtualbox" if node['ut_workstation']['install_virtualbox']
-include_recipe "vagrant"    if node['ut_workstation']['install_vagrant']
+include_recipe "virtualbox" if node["ut_workstation"]["install_virtualbox"]
+include_recipe "vagrant"    if node["ut_workstation"]["install_vagrant"]

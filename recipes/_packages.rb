@@ -20,7 +20,7 @@
 if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"
 
-  workstation_data.fetch('homebrew_taps', Hash.new).each_pair do |name, attrs|
+  workstation_data.fetch("homebrew_taps", Hash.new).each_pair do |name, attrs|
     homebrew_tap name do
       %w[action].each do |attr|
         send(attr, attrs[attr]) if attrs[attr]
@@ -34,7 +34,7 @@ elsif platform_family?("debian")
 end
 
 # install additional packages for the platform
-workstation_data.fetch('system_packages', Hash.new).each_pair do |name, attrs|
+workstation_data.fetch("system_packages", Hash.new).each_pair do |name, attrs|
   package name do
     %w[version source options action].each do |attr|
       send(attr, attrs[attr]) if attrs[attr]
@@ -44,7 +44,7 @@ end
 
 if platform?("mac_os_x")
   # install zip-based apps
-  workstation_data.fetch('zip_apps', Hash.new).each_pair do |name, attrs|
+  workstation_data.fetch("zip_apps", Hash.new).each_pair do |name, attrs|
     zip_app_package name do
       %w[source zip_file destination checksum action].each do |attr|
         send(attr, attrs[attr]) if attrs[attr]
@@ -53,7 +53,7 @@ if platform?("mac_os_x")
   end
 
   # install dmg-based apps
-  workstation_data.fetch('dmgs', Hash.new).each_pair do |name, attrs|
+  workstation_data.fetch("dmgs", Hash.new).each_pair do |name, attrs|
     dmg_package name do
       %w[volumes_dir dmg_name destination type source checksum action].each do |attr|
         send(attr, attrs[attr]) if attrs[attr]
