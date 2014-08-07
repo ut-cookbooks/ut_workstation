@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+site "https://supermarket.getchef.com/api/v1"
+
+cookbook "ut_workstation", :path => "."

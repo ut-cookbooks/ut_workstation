@@ -1,4 +1,6 @@
 language: ruby
+
 rvm:
-  - 1.9.3
-bundler_args: --without integration development
+  - 2.1
+
+bundler_args: --without development integration
