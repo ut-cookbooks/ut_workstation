@@ -65,7 +65,7 @@ if platform?("mac_os_x")
   %w{vim view}.each do |v|
     link "/usr/local/bin/#{v}" do
       to "/usr/local/bin/mvim"
-      only_if { ::File.exists?("/usr/local/bin/mvim") }
+      only_if { ::File.exist?("/usr/local/bin/mvim") }
     end
   end
 end
