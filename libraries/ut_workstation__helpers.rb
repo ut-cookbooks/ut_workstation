@@ -32,7 +32,7 @@ module UTWorkstation
     def load_workstation_data!
       node.run_state["workstation_data"] = begin
         data_bag_item('workstation', node['platform']).to_hash
-      rescue => ex
+      rescue
         Hash.new
       end
     end
@@ -63,7 +63,7 @@ module UTWorkstation
 
     def user_data(username)
       data_bag_item(node['user']['data_bag_name'], username).to_hash
-    rescue => ex
+    rescue
       Hash.new
     end
   end
