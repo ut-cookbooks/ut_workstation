@@ -26,7 +26,7 @@ if platform?("mac_os_x")
 
   workstation_data.fetch("userdefaults", Hash.new).each_pair do |name, attrs|
     mac_os_x_userdefaults name do
-      %w{domain key value type action}.each do |attr|
+      %w[domain key value type action].each do |attr|
         send(attr, attrs[attr]) if attrs[attr]
       end
 

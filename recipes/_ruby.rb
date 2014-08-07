@@ -46,7 +46,7 @@ chruby_installs.each do |chruby|
         r.prefix_path(opts['prefix_path'] || default_prefix)
         r.user(chruby['user'])
         r.group(opts['group'] || default_group)
-        %w{environment action}.each do |attr|
+        %w[environment action].each do |attr|
           r.send(attr, opts[attr]) if opts[attr]
         end
         r.run_action(:install) if !flag_or_opts.nil? && !flag_or_opts == false
