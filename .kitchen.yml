@@ -2,14 +2,24 @@
 driver:
   name: vagrant
 
+provisioner:
+  name: chef_solo
+  attributes:
+    authorization:
+      sudo:
+        users:
+          - vagrant
+    openssh:
+      server:
+        password_authentication: "yes"
+    users:
+    - vagrant
+
 platforms:
-- name: ubuntu-13.04
-- name: ubuntu-12.04
+  - name: ubuntu-14.04
+  - name: ubuntu-12.04
 
 suites:
 - name: default
   run_list:
-  - recipe[ut_workstation]
-  attributes:
-    users:
-    - vagrant
+    - recipe[ut_workstation]
