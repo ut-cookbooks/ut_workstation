@@ -6,6 +6,6 @@
   },
 
   "system_packages": {
-    "ack": {}
+    "lynx": {}
   }
 }

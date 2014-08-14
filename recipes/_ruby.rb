@@ -37,8 +37,12 @@ chruby_installs.each do |chruby|
     ruby_block "Ruby #{ruby} (#{chruby["user"]})" do
       block do
         user_home       = Etc.getpwnam(chruby["user"]).dir
-        default_prefix  = ::File.join(user_home, ".rubies", ruby)
+        default_prefix  = ::File.join(user_home, ".rubies")
         default_group   = Etc.getgrgid(Etc.getpwnam(chruby["user"]).gid).name
+        environment     = {
+          "USER" => chruby["user"],
+          "HOME" => user_home
+        }.merge(opts.fetch("environment", Hash.new))
 
         r = Chef::Resource::RubyInstallRuby.new("#{ruby} (#{chruby["user"]})",
           run_context)
@@ -46,9 +50,8 @@ chruby_installs.each do |chruby|
         r.prefix_path(opts["prefix_path"] || default_prefix)
         r.user(chruby["user"])
         r.group(opts["group"] || default_group)
-        %w[environment action].each do |attr|
-          r.send(attr, opts[attr]) if opts[attr]
-        end
+        r.environment(environment)
+        r.action(ops["action"]) if opts["action"]
         r.run_action(:install) if !flag_or_opts.nil? && !flag_or_opts == false
 
         r = Chef::Resource::File.new(::File.join(user_home, ".ruby-version"),
