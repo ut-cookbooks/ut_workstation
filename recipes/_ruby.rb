@@ -41,7 +41,7 @@ chruby_installs.each do |chruby|
 
     # delay evaluating the ruby_build_ruby resource until after the users are
     # created, this way we can compute a user's home directory and group
-    ruby_block "Ruby #{ruby} (#{chruby["user"]})" do
+    ruby_block "Ruby #{ruby} (#{chruby["user"]})" do # ~FC014
       block do
         user_home       = Etc.getpwnam(chruby["user"]).dir
         default_prefix  = ::File.join(user_home, ".rubies")
