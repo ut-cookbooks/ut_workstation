@@ -1,6 +1,6 @@
 # <a name="title"></a> Unicorn Tears Workstation Chef Cookbook
 
-[![Build Status](https://travis-ci.org/ut-cookbooks/ut_workstation.png?branch=master)](https://travis-ci.org/ut-workstation/ut_workstation)
+[![Build Status](https://travis-ci.org/ut-cookbooks/ut_workstation.png?branch=master)](https://travis-ci.org/ut-cookbooks/ut_workstation)
 
 ## <a name="description"></a> Description
 
