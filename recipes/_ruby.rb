@@ -26,6 +26,13 @@ chruby_installs = workstation_users.select { |_user, data|
 if !chruby_installs.empty?
   include_recipe "chruby"
   include_recipe "ruby_install"
+
+  # mac platform does not have a root group, fix needed in ruby_install
+  # cookbook upstream
+  if platform_family?("mac_os_x")
+    resources("execute[chown root:root /usr/local/bin/ruby-install]").
+      command("chown root:wheel /usr/local/bin/ruby-install")
+  end
 end
 
 chruby_installs.each do |chruby|

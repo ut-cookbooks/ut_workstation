@@ -17,7 +17,7 @@
 
   "chruby": {
     "rubies": {
-      "ruby-1.8.7-p374": { "default": true }
+      "ruby-2.1.2": { "default": true }
     }
   }
 }
