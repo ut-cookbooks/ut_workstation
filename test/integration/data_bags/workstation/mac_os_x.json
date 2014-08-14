@@ -11,6 +11,10 @@
 
   "system_packages": {
     "docker": {}
+  },
+
+  "casks": {
+    "iterm2": {}
   }
 }
 

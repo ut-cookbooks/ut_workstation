@@ -17,8 +17,19 @@
 # limitations under the License.
 #
 
+
 if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"
+
+  # install and setup homebrew cask
+  extend(Homebrew::Mixin)
+  brew_owner = homebrew_owner
+  include_recipe "homebrew::cask"
+  %w[/opt/homebrew-cask /opt/homebrew-cask/Caskroom].each do |dir|
+    directory dir do
+      owner brew_owner
+    end
+  end
 
   workstation_data.fetch("homebrew_taps", Hash.new).each_pair do |name, attrs|
     homebrew_tap name do
@@ -56,6 +67,15 @@ if platform?("mac_os_x")
   workstation_data.fetch("dmgs", Hash.new).each_pair do |name, attrs|
     dmg_package name do
       %w[volumes_dir dmg_name destination type source checksum action].each do |attr|
+        send(attr, attrs[attr]) if attrs[attr]
+      end
+    end
+  end
+
+  # install homebrew casks
+  workstation_data.fetch("casks", Hash.new).each_pair do |name, attrs|
+    homebrew_cask name do
+      %w[casked action].each do |attr|
         send(attr, attrs[attr]) if attrs[attr]
       end
     end
