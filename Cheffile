@@ -20,4 +20,3 @@ cookbook "xquartz",
 cookbook "vagrant",
   :git => "https://github.com/fnichol/vagrant-cookbook.git",
   :ref => "atomic-penguin-pr-3"
-

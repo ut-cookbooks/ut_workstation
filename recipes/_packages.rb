@@ -17,7 +17,6 @@
 # limitations under the License.
 #
 
-
 if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"
 
