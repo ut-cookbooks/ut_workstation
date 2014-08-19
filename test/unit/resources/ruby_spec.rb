@@ -63,14 +63,3 @@ describe Chef::Resource::UtWorkstationRuby do
     expect(resource.action).to eq(:install)
   end
 end
-
-__END__
-
-ut_workstation_ruby "Ruby ruby-2.1.2 (fnichol)" do
-  version "ruby-2.1.2
-  user "fnichol"
-  group "poop"
-  environment { ... }
-  default false
-  action :install
-end

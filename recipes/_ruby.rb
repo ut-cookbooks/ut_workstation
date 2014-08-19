@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+extend UTWorkstation::Helpers
+
 chruby_installs = workstation_users.select { |_user, data|
   !data["chruby"].nil? && !data["chruby"] == false
 }.map { |user, data|
@@ -37,37 +39,17 @@ end
 
 chruby_installs.each do |chruby|
   (chruby["rubies"] || Hash.new).each_pair do |ruby, flag_or_opts|
+    next if flag_or_opts.nil? || flag_or_opts == false
     opts = flag_or_opts.is_a?(Hash) ? flag_or_opts : Hash.new
 
-    # delay evaluating the ruby_build_ruby resource until after the users are
-    # created, this way we can compute a user's home directory and group
-    ruby_block "Ruby #{ruby} (#{chruby["user"]})" do # ~FC014
-      block do
-        user_home       = Etc.getpwnam(chruby["user"]).dir
-        default_prefix  = ::File.join(user_home, ".rubies")
-        default_group   = Etc.getgrgid(Etc.getpwnam(chruby["user"]).gid).name
-        environment     = {
-          "USER" => chruby["user"],
-          "HOME" => user_home
-        }.merge(opts.fetch("environment", Hash.new))
-
-        r = Chef::Resource::RubyInstallRuby.new("#{ruby} (#{chruby["user"]})",
-          run_context)
-        r.definition(ruby.sub("-", " "))
-        r.prefix_path(opts["prefix_path"] || default_prefix)
-        r.user(chruby["user"])
-        r.group(opts["group"] || default_group)
-        r.environment(environment)
-        r.action(ops["action"]) if opts["action"]
-        r.run_action(:install) if !flag_or_opts.nil? && !flag_or_opts == false
-
-        r = Chef::Resource::File.new(::File.join(user_home, ".ruby-version"),
-          run_context)
-        r.user(chruby["user"])
-        r.group(default_group)
-        r.content("#{ruby}\n")
-        r.run_action(:create) if opts["default"] == true
-      end
+    ut_workstation_ruby "Ruby #{ruby} (#{chruby["user"]})" do
+      version ruby
+      user chruby["user"]
+      group opts["group"]
+      prefix_path opts["prefix_path"]
+      environment opts["environment"]
+      default opts["default"]
+      action opts.fetch("opts", :install)
     end
   end
 end
