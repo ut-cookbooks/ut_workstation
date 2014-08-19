@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-extend(UTWorkstation::Helpers)
+extend UTWorkstation::Helpers
 
 if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"

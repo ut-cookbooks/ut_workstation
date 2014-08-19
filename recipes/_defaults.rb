@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+extend UTWorkstation::Helpers
+
 if platform?("mac_os_x")
   include_recipe "mac_os_x"
 
