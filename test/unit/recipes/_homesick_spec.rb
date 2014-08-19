@@ -1,6 +1,6 @@
 require_relative "../spec_helper"
 
-describe "ut_workstation::_data_bag" do
+describe "ut_workstation::_homesick" do
 
   let(:platform)  { "ubuntu" }
   let(:version)   { "14.04" }
