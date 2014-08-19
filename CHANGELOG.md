@@ -1,3 +1,11 @@
+## 1.2.0 / 2014-08-19
+
+### Improvements
+
+* Update cookbook dependencies (no longer and git or forked deps). ([@fnichol][])
+* Add spec coverage and code quality tooling to project. ([@fnichol][])
+
+
 ## 1.1.0 / 2014-01-26
 
 ### New features
