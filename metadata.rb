@@ -11,7 +11,7 @@ supports "ubuntu"
 supports "debian"
 
 # please see Cheffile for any special/specific versions or forks
-depends "apt",        "~> 2.4.0"
+depends "apt",        "~> 2.5"
 depends "ark",        "~> 0.9"
 depends "bashrc"      # via git
 depends "chruby",     "~> 0.2"
