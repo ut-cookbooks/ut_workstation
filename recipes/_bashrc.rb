@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+extend UTWorkstation::Helpers
+
 bashrc_installs = workstation_users.select { |_user, data|
   !data["bashrc"].nil? && !data["bashrc"] == false
 }.map { |user, data|
