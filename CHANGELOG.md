@@ -1,3 +1,10 @@
+## 1.2.2 / 2014-09-15
+
+### Improvements
+
+* Update xquartz dependency to 1.0.1 and off the git fork. (@fnichol)
+
+
 ## 1.2.0 / 2014-08-19
 
 ### Improvements
