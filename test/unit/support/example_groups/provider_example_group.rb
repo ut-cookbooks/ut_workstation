@@ -49,7 +49,7 @@ class Chef
       runner.resource_collection.all_resources.map(&:to_s)
     end
 
-    def self.included(base) # rubocop:disable Style/MethodLength
+    def self.included(base) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       base.class_eval do
         metadata[:type] = :provider
 
