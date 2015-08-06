@@ -41,9 +41,8 @@ class Chef
     end
 
     def using_libraries(cookbook)
-      run_context.cookbook_collection[cookbook].library_filenames.each do
-        |f| require(f)
-      end
+      run_context.cookbook_collection[cookbook].library_filenames.
+        each { |f| require(f) }
     end
 
     def runner_resources
