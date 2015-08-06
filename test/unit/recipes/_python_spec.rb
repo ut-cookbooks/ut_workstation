@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe "ut_workstation::_python" do
 
   let(:runner) do
-    ChefSpec::Runner.new(:platform => platform, :version => version)
+    ChefSpec::SoloRunner.new(:platform => platform, :version => version)
   end
 
   let(:node)      { runner.node }

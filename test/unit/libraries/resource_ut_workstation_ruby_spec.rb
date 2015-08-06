@@ -1,5 +1,5 @@
-require "spec_helper"
-load_resource("ut_workstation", "ruby")
+require_relative "../spec_helper"
+require_relative "../../../libraries/resource_ut_workstation_ruby"
 
 describe Chef::Resource::UtWorkstationRuby do
 
@@ -60,6 +60,6 @@ describe Chef::Resource::UtWorkstationRuby do
   end
 
   it "action defaults to :install" do
-    expect(resource.action).to eq(:install)
+    expect(resource.action).to eq([:install])
   end
 end

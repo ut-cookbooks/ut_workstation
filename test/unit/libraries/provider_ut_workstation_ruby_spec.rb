@@ -1,6 +1,6 @@
 require_relative "../spec_helper"
-load_resource("ut_workstation", "ruby")
-load_provider("ut_workstation", "ruby")
+require_relative "../../../libraries/resource_ut_workstation_ruby"
+require_relative "../../../libraries/provider_ut_workstation_ruby"
 
 describe Chef::Provider::UtWorkstationRuby do
 

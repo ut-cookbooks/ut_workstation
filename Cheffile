@@ -8,9 +8,3 @@ cookbook "ut_workstation",
 cookbook "bashrc",
   :git => "https://github.com/fnichol/chef-bashrc.git",
   :ref => "v0.3.4"
-
-# adds support for vagrant 1.4.3+, pending release of new cookbook
-# * https://github.com/jtimberman/vagrant-cookbook/pull/3
-cookbook "vagrant",
-  :git => "https://github.com/fnichol/vagrant-cookbook.git",
-  :ref => "atomic-penguin-pr-3"

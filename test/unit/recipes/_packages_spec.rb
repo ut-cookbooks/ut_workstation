@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe "ut_workstation::_packages" do
 
   let(:runner) do
-    ChefSpec::Runner.new(:platform => platform, :version => version)
+    ChefSpec::SoloRunner.new(:platform => platform, :version => version)
   end
 
   let(:node)      { runner.node }
@@ -124,6 +124,8 @@ describe "ut_workstation::_packages" do
 
     it "ensures cask directories are owned by homebrew owner" do
       node.set["homebrew"]["owner"] = "jdoe"
+      allow_any_instance_of(Chef::Recipe).to receive(:homebrew_owner).
+        and_return("jdoe")
 
       %w[/opt/homebrew-cask /opt/homebrew-cask/Caskroom].each do |dir|
         expect(chef_run).to create_directory(dir).with(:owner => "jdoe")

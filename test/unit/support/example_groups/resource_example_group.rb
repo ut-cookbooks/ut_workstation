@@ -3,9 +3,7 @@ class Chef
 
     def self.included(base)
       base.class_eval do
-
         metadata[:type] = :resource
-        metadata[:description]
 
         let(:resource) do
           described_class.new(resource_name)

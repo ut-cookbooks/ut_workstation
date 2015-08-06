@@ -1,6 +1,13 @@
 class Chef
   module ProviderExampleGroup
 
+    def class_name_for_lwrp(cookbook, lwrp)
+      require "chef/mixin/convert_to_class_name"
+      Chef::Mixin::ConvertToClassName.convert_to_class_name(
+        Chef::Mixin::ConvertToClassName.filename_to_qualified_string(cookbook, lwrp)
+      )
+    end
+
     def using_lw_resource(cookbook, lwrp)
       name = class_name_for_lwrp(cookbook, lwrp)
       resource_file = run_context.cookbook_collection[cookbook].
@@ -46,7 +53,6 @@ class Chef
     def self.included(base) # rubocop:disable Style/MethodLength
       base.class_eval do
         metadata[:type] = :provider
-        metadata[:description]
 
         let(:new_resource) do
           resource_class.new(resource_name)
@@ -85,7 +91,7 @@ class Chef
           step_into = Chef::Mixin::ConvertToClassName.convert_to_snake_case(
             resource_class.to_s, Chef::Resource.to_s
           )
-          ChefSpec::Runner.new(
+          ChefSpec::SoloRunner.new(
             :platform => platform,
             :version => version,
             :step_into => [step_into]

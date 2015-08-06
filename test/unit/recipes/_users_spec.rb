@@ -6,7 +6,7 @@ describe "ut_workstation::_users" do
   let(:version)   { "14.04" }
 
   let(:runner) do
-    ChefSpec::Runner.new(:platform => platform, :version => version)
+    ChefSpec::SoloRunner.new(:platform => platform, :version => version)
   end
 
   let(:node)      { runner.node }

@@ -23,7 +23,7 @@ if platform?("mac_os_x")
   homebrew_tap "homebrew/dupes"
 
   # install and setup homebrew cask
-  extend(Homebrew::Mixin)
+  Chef::Recipe.send(:include, Homebrew::Mixin)
   brew_owner = homebrew_owner
   include_recipe "homebrew::cask"
   %w[/opt/homebrew-cask /opt/homebrew-cask/Caskroom].each do |dir|
