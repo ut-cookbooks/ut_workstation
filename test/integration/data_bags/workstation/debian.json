@@ -1,0 +1,11 @@
+{
+  "id": "debian",
+
+  "pip_packages": {
+    "Pygments": {}
+  },
+
+  "system_packages": {
+    "lynx": {}
+  }
+}
