@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
   attributes:
     authorization:
       sudo:
@@ -13,7 +13,7 @@ provisioner:
       server:
         password_authentication: "yes"
     users:
-    - vagrant
+      - vagrant
 
 platforms:
   - name: ubuntu-14.04
