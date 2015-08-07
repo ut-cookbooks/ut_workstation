@@ -20,5 +20,7 @@
 node.default["ut_workstation"]["virtualbox"]["dmg"] =
   "http://download.virtualbox.org/virtualbox/5.0.0/VirtualBox-5.0.0-101573-OSX.dmg"
 
+node.default["ut_workstation"]["vagrant"]["version"] = "1.7.4"
+
 node.default["ut_workstation"]["install_virtualbox"] = true
 node.default["ut_workstation"]["install_vagrant"] = true

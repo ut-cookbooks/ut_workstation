@@ -22,6 +22,20 @@ describe "ut_workstation::_vagrant" do
 
       expect(chef_run).to_not include_recipe("virtualbox")
     end
+
+    it "sets the vagrant version from ut_workstation node attribute" do
+      node.set["ut_workstation"]["vagrant"]["version"] = "foo.2.3"
+
+      chef_run
+
+      expect(node["vagrant"]["version"]).to eq("foo.2.3")
+    end
+
+    it "vagrant version defaults to 1.7.4" do
+      chef_run
+
+      expect(node["vagrant"]["version"]).to eq("1.7.4")
+    end
   end
 
   describe "for ubuntu platforms" do
