@@ -1,3 +1,20 @@
+## 1.3.0 / 2015-08-07
+
+### New features
+
+* Support Chef 12+. (@fnichol)
+* Support Mac 10.10. (@fnichol)
+* Support Debian 8.1. (@fnichol)
+
+### Improvements
+
+* Update to chruby 0.3.9. (@fnichol)
+* Update VirtualBox's Mac URL to 5.0.0. (@fnichol)
+* Update to Vagrant version 1.7.4. (@fnichol)
+* Fix ownership of homebrew cache directories. (@fnichol)
+* Link all homebrew casks into /Application by default. (@fnichol)
+
+
 ## 1.2.2 / 2014-09-15
 
 ### Improvements
