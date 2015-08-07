@@ -20,6 +20,7 @@ platforms:
   - name: ubuntu-14.04
   - name: ubuntu-12.04
   - name: debian-8.1
+  - name: centos-7.1
 
 suites:
 - name: default
