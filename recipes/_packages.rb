@@ -26,7 +26,10 @@ if platform?("mac_os_x")
   Chef::Recipe.send(:include, Homebrew::Mixin)
   brew_owner = homebrew_owner
   include_recipe "homebrew::cask"
-  %w[/opt/homebrew-cask /opt/homebrew-cask/Caskroom].each do |dir|
+  %w[
+    /opt/homebrew-cask /opt/homebrew-cask/Caskroom
+    /Library/Caches/Homebrew /Library/Caches/Homebrew/Casks
+  ].each do |dir|
     directory dir do
       owner brew_owner
     end

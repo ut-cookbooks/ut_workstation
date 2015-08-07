@@ -127,7 +127,10 @@ describe "ut_workstation::_packages" do
       allow_any_instance_of(Chef::Recipe).to receive(:homebrew_owner).
         and_return("jdoe")
 
-      %w[/opt/homebrew-cask /opt/homebrew-cask/Caskroom].each do |dir|
+      %w[
+        /opt/homebrew-cask /opt/homebrew-cask/Caskroom
+        /Library/Caches/Homebrew /Library/Caches/Homebrew/Casks
+      ].each do |dir|
         expect(chef_run).to create_directory(dir).with(:owner => "jdoe")
       end
     end
