@@ -21,6 +21,12 @@ platforms:
   - name: ubuntu-12.04
   - name: debian-8.1
   - name: centos-7.1
+  # - name: macosx-10.9
+  #   driver:
+  #     box: chef/macosx-10.9 # private box
+  # - name: macosx-10.10
+  #   driver:
+  #     box: chef/macosx-10.10 # private box
 
 suites:
 - name: default
