@@ -77,6 +77,7 @@ if platform?("mac_os_x")
   end
 
   # install homebrew casks
+  ENV["HOMEBREW_CASK_OPTS"] = "--appdir=/Applications"
   workstation_data.fetch("casks", Hash.new).each_pair do |name, attrs|
     homebrew_cask name do
       %w[casked action].each do |attr|
