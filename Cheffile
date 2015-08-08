@@ -9,12 +9,6 @@ cookbook "bashrc",
   :git => "https://github.com/fnichol/chef-bashrc.git",
   :ref => "v0.3.4"
 
-# pending merge of https://github.com/chef-osx/xcode/pull/5
-# and next release
-cookbook "xcode",
-  :git => "https://github.com/fnichol/xcode.git",
-  :ref => "mac-1010-109-updates"
-
 # pending merge of https://github.com/chef-osx/xquartz/pull/6
 # and next release
 cookbook "xquartz",

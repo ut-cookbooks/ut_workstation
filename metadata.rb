@@ -20,7 +20,7 @@ depends "homesick",   "~> 0.4"
 depends "mac_os_x",   "~> 1.4"
 depends "ubuntu",     "~> 1.1"
 depends "user",       "~> 0.3"
-depends "ut_base",    "~> 1.2"
+depends "ut_base",    "~> 1.7"
 depends "python",     "~> 1.3"
 depends "ruby_install", "1.0.4" # pending mac patch upstream
 depends "xquartz"     # forked version, via git
