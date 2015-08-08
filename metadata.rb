@@ -2,14 +2,13 @@ name             "ut_workstation"
 maintainer       "Fletcher Nichol"
 maintainer_email "fnichol@nichol.ca"
 license          "Apache 2.0"
-description      "Unicorn Tears Workstation"
-long_description IO.read(File.join(File.dirname(__FILE__), "README.md"))
+description      "Unicorn Tears Workstation cookbook"
 version          "1.3.1"
 
+supports "centos"
+supports "debian"
 supports "mac_os_x"
 supports "ubuntu"
-supports "debian"
-supports "centos"
 
 # please see Cheffile for any special/specific versions or forks
 depends "apt",        "~> 2.5"

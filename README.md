@@ -1,147 +1,84 @@
-# <a name="title"></a> Unicorn Tears Workstation Chef Cookbook
+# Unicorn Tears Workstation Chef Cookbook
 
 [![Cookbook Version](http://img.shields.io/cookbook/v/ut_base.svg)](https://supermarket.chef.io/cookbooks/ut_workstation)
 [![Build Status](https://travis-ci.org/ut-cookbooks/ut_workstation.png?branch=master)](https://travis-ci.org/ut-cookbooks/ut_workstation)
 
-## <a name="description"></a> Description
-
-Chef cookbook for a Unicorn Tears workstation.
-
 * Website: http://ut-cookbooks.github.io/ut_workstation/
-* Opscode Community Site: http://community.opscode.com/cookbooks/ut_workstation
+* Supermarket: https://supermarket.chef.io/cookbooks/ut_workstation
 * Source Code: https://github.com/ut-cookbooks/ut_workstation
+
+A Chef cookbook for a Unicorn Tears workstation.
 
 This is a wrapper (or application) cookbook and is therefore good and
 opinionated about application and configuration defaults. Feel free to try it,
 fork and modify it, or just read and learn.
 
-## <a name="usage"></a> Usage
+## Usage
 
-Simply include `recipe[ut_workstation]` in your run\_list and set up some bag
-items (namely under `workstation` and `users`) to drive the cookbook.
+Include `recipe[ut_workstation]` in your run-list and set up some data
+bag items (namely under `workstation` and `users`) to drive the cookbook.
 
-## <a name="requirements"></a> Requirements
+## Requirements
 
-### <a name="requirements-chef"></a> Chef
+* Chef 12 or higher
 
-Tested on 11.4.4 but newer and older version should work just fine.
-File an [issue][issues] if this isn't the case.
+## Platform Support
 
-### <a name="requirements-platform"></a> Platform
+This cookbook is tested on the following platforms with [Test
+Kitchen](http://kitchen.ci):
 
-The following platforms have been tested with this cookbook, meaning that the
-recipes run on these platforms without error:
+* CentOS 7.1 64-bit
+* Debian 8.1 64-bit
+* Mac OS X 10.9
+* Mac OS X 10.10
+* Ubuntu 12.04 64-bit
+* Ubuntu 14.04 64-bit
+* Ubuntu 15.04 64-bit
 
-* ubuntu
-* debian
-* mac\_os\_x
+Unlisted platforms in the same family of similar or equivalent versions may
+work without modification to this cookbook. Please [report][issues] any
+additional platforms so they can be added.
 
-Please [report][issues] any additional platforms so they can be added.
-
-### <a name="requirements-cookbooks"></a> Cookbooks
+## Cookbook Dependencies
 
 This cookbook depends on the following external cookbooks:
 
-* [apt][apt_cb]
-* [bashrc][bashrc_cb] (via Git)
-* [chruby][chruby_cb] (currently forked)
-* [dmg][dmg_cb]
-* [homebrew][homebrew_cb]
-* [homesick][homesick_cb]
-* [mac_os_x][mac_os_x_cb] (currently forked)
-* [user][user_cb]
-* [ut_base][ut_base_cb]
-* [python][python_cb]
-* [ruby_install][ruby_install_cb]
-* [xquartz][xquartz_cb] (currently forked)
-* [vagrant][vagrant_cb] (currently forked)
-* [virtualbox][virtualbox_cb]
-* [zip_app][zip_app_cb]
+* [apt](http://community.opscode.com/cookbooks/apt)
+* [bashrc](https://github.com/fnichol/chef-bashrc) (via Git)
+* [chruby](http://community.opscode.com/cookbooks/chruby)
+* [dmg](http://community.opscode.com/cookbooks/dmg)
+* [homebrew](http://community.opscode.com/cookbooks/homebrew)
+* [homesick](http://community.opscode.com/cookbooks/homesick)
+* [mac_os_x](http://community.opscode.com/cookbooks/mac_os_x)
+* [user](http://community.opscode.com/cookbooks/user)
+* [ut_base](http://community.opscode.com/cookbooks/ut_base)
+* [python](http://community.opscode.com/cookbooks/python)
+* [ruby_install](http://community.opscode.com/cookbooks/ruby_install)
+* [xquartz](http://community.opscode.com/cookbooks/xquartz) (currently forked)
+* [vagrant](http://community.opscode.com/cookbooks/vagrant)
+* [virtualbox](http://community.opscode.com/cookbooks/virtualbox)
+* [zip_app](http://community.opscode.com/cookbooks/zip_app)
 
-## <a name="installation"></a> Installation
+## Recipes
 
-Depending on the situation and use case there are several ways to install
-this cookbook. All the methods listed below assume a tagged version release
-is the target, but omit the tags to get the head of development. A valid
-Chef repository structure like the [Opscode repo][chef_repo] is also assumed.
+### default
 
-### <a name="installation-site"></a> From the Opscode Community Site
+Main recipe which includes all internal recipes.
 
-To install this cookbook from the Community Site, use the *knife* command:
+## Attributes
 
-    knife cookbook site install ut_workstation
+| Key                                        | Description                                 | Type    | Default                     |
+|--------------------------------------------|---------------------------------------------|---------|-----------------------------|
+| `["ut_workstation"]["virtualbox"]["dmg"]`  | The download URL for Virtualbox on Mac OS X | String  | (see attributes/vagrant.rb) |
+| `["ut_workstation"]["vagrant"]["version"]` | The version of Vagrant to install           | String  | (see attributes/vagrant.rb) |
+| `["ut_workstation"]["install_virtualbox"]` | Whether or not to install VirtualBox        | Boolean | `true`                      |
+| `["ut_workstation"]["install_vagrant"]`    | Whether or not to install Vagrant           | Boolean | `true`                      |
 
-### <a name="installation-berkshelf"></a> Using Berkshelf
+## Resources and Providers
 
-[Berkshelf][berkshelf] is a cookbook dependency manager and development
-workflow assistant. To install Berkshelf:
+There are **no external** resources and providers.
 
-    cd chef-repo
-    gem install berkshelf
-    berks init
-
-To use the Community Site version:
-
-    echo "cookbook 'ut_workstation'" >> Berksfile
-    berks install
-
-Or to reference the Git version:
-
-    repo="ut-cookbooks/ut_workstation"
-    latest_release=$(curl -s https://api.github.com/repos/$repo/git/refs/tags \
-    | ruby -rjson -e '
-      j = JSON.parse(STDIN.read);
-      puts j.map { |t| t["ref"].split("/").last }.sort.last
-    ')
-    cat >> Berksfile <<END_OF_BERKSFILE
-    cookbook 'chgems',
-      :git => 'git://github.com/$repo.git', :branch => '$latest_release'
-    END_OF_BERKSFILE
-    berks install
-
-### <a name="installation-librarian"></a> Using Librarian-Chef
-
-[Librarian-Chef][librarian] is a bundler for your Chef cookbooks.
-To install Librarian-Chef:
-
-    cd chef-repo
-    gem install librarian
-    librarian-chef init
-
-To use the Community Site version:
-
-    echo "cookbook 'ut_workstation'" >> Cheffile
-    librarian-chef install
-
-Or to reference the Git version:
-
-    repo="ut-cookbooks/ut_workstation"
-    latest_release=$(curl -s https://api.github.com/repos/$repo/git/refs/tags \
-    | ruby -rjson -e '
-      j = JSON.parse(STDIN.read);
-      puts j.map { |t| t["ref"].split("/").last }.sort.last
-    ')
-    cat >> Cheffile <<END_OF_CHEFFILE
-    cookbook 'chgems',
-      :git => 'git://github.com/$repo.git', :ref => '$latest_release'
-    END_OF_CHEFFILE
-    librarian-chef install
-
-## <a name="recipes"></a> Recipes
-
-### <a name="recipes-default"></a> default
-
-coming soon...
-
-## <a name="attributes"></a> Attributes
-
-coming soon...
-
-## <a name="lwrps"></a> Resources and Providers
-
-There are **no** resources and providers.
-
-## <a name="development"></a> Development
+## Development
 
 * Source hosted at [GitHub][repo]
 * Report issues/Questions/Feature requests on [GitHub Issues][issues]
@@ -149,7 +86,7 @@ There are **no** resources and providers.
 Pull requests are very welcome! Make sure your patches are well tested.
 Ideally create a topic branch for every separate change you make.
 
-## <a name="license"></a> License and Author
+## License and Author
 
 Author:: [Fletcher Nichol][fnichol] (<fnichol@nichol.ca>) [![endorse](http://api.coderwall.com/fnichol/endorsecount.png)](http://coderwall.com/fnichol)
 
@@ -166,27 +103,6 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
-[apt_cb]:         http://community.opscode.com/cookbooks/apt
-[bashrc_cb]:      https://github.com/fnichol/chef-bashrc
-[chruby_cb]:      http://community.opscode.com/cookbooks/chruby
-[dmg_cb]:         http://community.opscode.com/cookbooks/dmg
-[homebrew_cb]:    http://community.opscode.com/cookbooks/homebrew
-[homesick_cb]:    http://community.opscode.com/cookbooks/homesick
-[mac_os_x_cb]:    http://community.opscode.com/cookbooks/mac_os_x
-[user_cb]:        http://community.opscode.com/cookbooks/user
-[ut_base_cb]:     http://community.opscode.com/cookbooks/ut_base
-[python_cb]:      http://community.opscode.com/cookbooks/python
-[ruby_install_cb]: http://community.opscode.com/cookbooks/ruby_install
-[xquartz_cb]:     http://community.opscode.com/cookbooks/xquartz
-[vagrant_cb]:     http://community.opscode.com/cookbooks/vagrant
-[virtualbox_cb]:  http://community.opscode.com/cookbooks/virtualbox
-[zip_app_cb]:     http://community.opscode.com/cookbooks/zip_app
-
-[berkshelf]:    http://berkshelf.com/
-[chef_repo]:    https://github.com/opscode/chef-repo
-[cheffile]:     https://github.com/applicationsonline/librarian/blob/master/lib/librarian/chef/templates/Cheffile
-[librarian]:    https://github.com/applicationsonline/librarian#readme
 
 [fnichol]:      https://github.com/fnichol
 [repo]:         https://github.com/ut-cookbooks/ut_workstation
