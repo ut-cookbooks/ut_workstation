@@ -46,7 +46,6 @@ This cookbook depends on the following external cookbooks:
 * [apt](http://community.opscode.com/cookbooks/apt)
 * [bashrc](https://github.com/fnichol/chef-bashrc) (via Git)
 * [chruby](http://community.opscode.com/cookbooks/chruby)
-* [dmg](http://community.opscode.com/cookbooks/dmg)
 * [homebrew](http://community.opscode.com/cookbooks/homebrew)
 * [homesick](http://community.opscode.com/cookbooks/homesick)
 * [mac_os_x](http://community.opscode.com/cookbooks/mac_os_x)
@@ -57,7 +56,6 @@ This cookbook depends on the following external cookbooks:
 * [xquartz](http://community.opscode.com/cookbooks/xquartz) (currently forked)
 * [vagrant](http://community.opscode.com/cookbooks/vagrant)
 * [virtualbox](http://community.opscode.com/cookbooks/virtualbox)
-* [zip_app](http://community.opscode.com/cookbooks/zip_app)
 
 ## Recipes
 

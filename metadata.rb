@@ -15,7 +15,6 @@ depends "apt",        "~> 2.5"
 depends "ark",        "~> 0.9"
 depends "bashrc"      # via git
 depends "chruby",     "~> 0.2"
-depends "dmg",        "~> 2.1"
 depends "homebrew",   "~> 1.4"
 depends "homesick",   "~> 0.4"
 depends "mac_os_x",   "~> 1.4"
@@ -27,4 +26,3 @@ depends "ruby_install", "1.0.4" # pending mac patch upstream
 depends "xquartz"     # forked version, via git
 depends "vagrant",    "~> 0.2"
 depends "virtualbox", "~> 1.0"
-depends "zip_app",    "~> 0.2"

@@ -58,24 +58,6 @@ workstation_data.fetch("system_packages", Hash.new).each_pair do |name, attrs|
 end
 
 if platform?("mac_os_x")
-  # install zip-based apps
-  workstation_data.fetch("zip_apps", Hash.new).each_pair do |name, attrs|
-    zip_app_package name do
-      %w[source zip_file destination checksum action].each do |attr|
-        send(attr, attrs[attr]) if attrs[attr]
-      end
-    end
-  end
-
-  # install dmg-based apps
-  workstation_data.fetch("dmgs", Hash.new).each_pair do |name, attrs|
-    dmg_package name do
-      %w[volumes_dir dmg_name destination type source checksum action].each do |attr|
-        send(attr, attrs[attr]) if attrs[attr]
-      end
-    end
-  end
-
   # install homebrew casks
   ENV["HOMEBREW_CASK_OPTS"] = "--appdir=/Applications"
   workstation_data.fetch("casks", Hash.new).each_pair do |name, attrs|

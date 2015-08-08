@@ -75,26 +75,6 @@ describe "ut_workstation::_packages" do
         "homebrew_taps" => {
           "cool/beans" => {}
         },
-        "zip_apps" => {
-          "alpha" => {},
-          "beta" => {
-            "source" => "a",
-            "zip_file" => "b",
-            "destination" => "c",
-            "checksum" => "d"
-          }
-        },
-        "dmgs" => {
-          "charlie" => {},
-          "delta" => {
-            "volumes_dir" => "e",
-            "dmg_name" => "f",
-            "destination" => "g",
-            "type" => "h",
-            "source" => "i",
-            "checksum" => "j"
-          }
-        },
         "casks" => {
           "echo" => {},
           "foxtrot" => {
@@ -144,34 +124,6 @@ describe "ut_workstation::_packages" do
     end
 
     include_examples "system packages"
-
-    it "installs a simple zip app" do
-      expect(chef_run).to install_zip_app_package("alpha")
-    end
-
-    it "installs a zip app with multiple attribtes" do
-      expect(chef_run).to install_zip_app_package("beta").with(
-        :source       => "a",
-        :zip_file     => "b",
-        :destination  => "c",
-        :checksum     => "d"
-      )
-    end
-
-    it "installs a simple dmg app" do
-      expect(chef_run).to install_dmg_package("charlie")
-    end
-
-    it "installs a dmg app with multiple attribtes" do
-      expect(chef_run).to install_dmg_package("delta").with(
-        :volumes_dir  => "e",
-        :dmg_name     => "f",
-        :destination  => "g",
-        :type         => "h",
-        :source       => "i",
-        :checksum     => "j"
-      )
-    end
 
     it "installs a simple homebrew cask" do
       expect(chef_run).to install_homebrew_cask("echo")
