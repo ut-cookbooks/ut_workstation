@@ -6,7 +6,7 @@
     <title>Ut workstation by ut-cookbooks</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -33,7 +33,7 @@
         <p><a href="https://travis-ci.org/ut-workstation/ut_workstation"><img src="https://travis-ci.org/ut-cookbooks/ut_workstation.png?branch=master" alt="Build Status"></a></p>
 
 <h2>
-<a name="-description" class="anchor" href="#-description"><span class="octicon octicon-link"></span></a><a name="description"></a> Description</h2>
+<a id="-description" class="anchor" href="#-description" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="description"></a> Description</h2>
 
 <p>Chef cookbook for a Unicorn Tears workstation.</p>
 
@@ -44,27 +44,29 @@
 </li>
 <li>Source Code: <a href="https://github.com/ut-cookbooks/ut_workstation">https://github.com/ut-cookbooks/ut_workstation</a>
 </li>
-</ul><p>This is a wrapper (or application) cookbook and is therefore good and
+</ul>
+
+<p>This is a wrapper (or application) cookbook and is therefore good and
 opinionated about application and configuration defaults. Feel free to try it,
 fork and modify it, or just read and learn.</p>
 
 <h2>
-<a name="-usage" class="anchor" href="#-usage"><span class="octicon octicon-link"></span></a><a name="usage"></a> Usage</h2>
+<a id="-usage" class="anchor" href="#-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="usage"></a> Usage</h2>
 
 <p>Simply include <code>recipe[ut_workstation]</code> in your run_list and set up some bag
 items (namely under <code>workstation</code> and <code>users</code>) to drive the cookbook.</p>
 
 <h2>
-<a name="-requirements" class="anchor" href="#-requirements"><span class="octicon octicon-link"></span></a><a name="requirements"></a> Requirements</h2>
+<a id="-requirements" class="anchor" href="#-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="requirements"></a> Requirements</h2>
 
 <h3>
-<a name="-chef" class="anchor" href="#-chef"><span class="octicon octicon-link"></span></a><a name="requirements-chef"></a> Chef</h3>
+<a id="-chef" class="anchor" href="#-chef" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="requirements-chef"></a> Chef</h3>
 
 <p>Tested on 11.4.4 but newer and older version should work just fine.
 File an <a href="https://github.com/ut-cookbooks/ut_workstation/issues">issue</a> if this isn't the case.</p>
 
 <h3>
-<a name="-platform" class="anchor" href="#-platform"><span class="octicon octicon-link"></span></a><a name="requirements-platform"></a> Platform</h3>
+<a id="-platform" class="anchor" href="#-platform" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="requirements-platform"></a> Platform</h3>
 
 <p>The following platforms have been tested with this cookbook, meaning that the
 recipes run on these platforms without error:</p>
@@ -73,10 +75,12 @@ recipes run on these platforms without error:</p>
 <li>ubuntu</li>
 <li>debian</li>
 <li>mac_os_x</li>
-</ul><p>Please <a href="https://github.com/ut-cookbooks/ut_workstation/issues">report</a> any additional platforms so they can be added.</p>
+</ul>
+
+<p>Please <a href="https://github.com/ut-cookbooks/ut_workstation/issues">report</a> any additional platforms so they can be added.</p>
 
 <h3>
-<a name="-cookbooks" class="anchor" href="#-cookbooks"><span class="octicon octicon-link"></span></a><a name="requirements-cookbooks"></a> Cookbooks</h3>
+<a id="-cookbooks" class="anchor" href="#-cookbooks" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="requirements-cookbooks"></a> Cookbooks</h3>
 
 <p>This cookbook depends on the following external cookbooks:</p>
 
@@ -101,8 +105,10 @@ recipes run on these platforms without error:</p>
 <a href="http://community.opscode.com/cookbooks/vagrant">vagrant</a> (currently forked)</li>
 <li><a href="http://community.opscode.com/cookbooks/virtualbox">virtualbox</a></li>
 <li><a href="http://community.opscode.com/cookbooks/zip_app">zip_app</a></li>
-</ul><h2>
-<a name="-installation" class="anchor" href="#-installation"><span class="octicon octicon-link"></span></a><a name="installation"></a> Installation</h2>
+</ul>
+
+<h2>
+<a id="-installation" class="anchor" href="#-installation" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="installation"></a> Installation</h2>
 
 <p>Depending on the situation and use case there are several ways to install
 this cookbook. All the methods listed below assume a tagged version release
@@ -110,7 +116,7 @@ is the target, but omit the tags to get the head of development. A valid
 Chef repository structure like the <a href="https://github.com/opscode/chef-repo">Opscode repo</a> is also assumed.</p>
 
 <h3>
-<a name="-from-the-opscode-community-site" class="anchor" href="#-from-the-opscode-community-site"><span class="octicon octicon-link"></span></a><a name="installation-site"></a> From the Opscode Community Site</h3>
+<a id="-from-the-opscode-community-site" class="anchor" href="#-from-the-opscode-community-site" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="installation-site"></a> From the Opscode Community Site</h3>
 
 <p>To install this cookbook from the Community Site, use the <em>knife</em> command:</p>
 
@@ -118,7 +124,7 @@ Chef repository structure like the <a href="https://github.com/opscode/chef-repo
 </code></pre>
 
 <h3>
-<a name="-using-berkshelf" class="anchor" href="#-using-berkshelf"><span class="octicon octicon-link"></span></a><a name="installation-berkshelf"></a> Using Berkshelf</h3>
+<a id="-using-berkshelf" class="anchor" href="#-using-berkshelf" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="installation-berkshelf"></a> Using Berkshelf</h3>
 
 <p><a href="http://berkshelf.com/">Berkshelf</a> is a cookbook dependency manager and development
 workflow assistant. To install Berkshelf:</p>
@@ -150,7 +156,7 @@ berks install
 </code></pre>
 
 <h3>
-<a name="-using-librarian-chef" class="anchor" href="#-using-librarian-chef"><span class="octicon octicon-link"></span></a><a name="installation-librarian"></a> Using Librarian-Chef</h3>
+<a id="-using-librarian-chef" class="anchor" href="#-using-librarian-chef" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="installation-librarian"></a> Using Librarian-Chef</h3>
 
 <p><a href="https://github.com/applicationsonline/librarian#readme">Librarian-Chef</a> is a bundler for your Chef cookbooks.
 To install Librarian-Chef:</p>
@@ -182,36 +188,38 @@ librarian-chef install
 </code></pre>
 
 <h2>
-<a name="-recipes" class="anchor" href="#-recipes"><span class="octicon octicon-link"></span></a><a name="recipes"></a> Recipes</h2>
+<a id="-recipes" class="anchor" href="#-recipes" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="recipes"></a> Recipes</h2>
 
 <h3>
-<a name="-default" class="anchor" href="#-default"><span class="octicon octicon-link"></span></a><a name="recipes-default"></a> default</h3>
+<a id="-default" class="anchor" href="#-default" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="recipes-default"></a> default</h3>
 
 <p>coming soon...</p>
 
 <h2>
-<a name="-attributes" class="anchor" href="#-attributes"><span class="octicon octicon-link"></span></a><a name="attributes"></a> Attributes</h2>
+<a id="-attributes" class="anchor" href="#-attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="attributes"></a> Attributes</h2>
 
 <p>coming soon...</p>
 
 <h2>
-<a name="-resources-and-providers" class="anchor" href="#-resources-and-providers"><span class="octicon octicon-link"></span></a><a name="lwrps"></a> Resources and Providers</h2>
+<a id="-resources-and-providers" class="anchor" href="#-resources-and-providers" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="lwrps"></a> Resources and Providers</h2>
 
 <p>There are <strong>no</strong> resources and providers.</p>
 
 <h2>
-<a name="-development" class="anchor" href="#-development"><span class="octicon octicon-link"></span></a><a name="development"></a> Development</h2>
+<a id="-development" class="anchor" href="#-development" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="development"></a> Development</h2>
 
 <ul>
 <li>Source hosted at <a href="https://github.com/ut-cookbooks/ut_workstation">GitHub</a>
 </li>
 <li>Report issues/Questions/Feature requests on <a href="https://github.com/ut-cookbooks/ut_workstation/issues">GitHub Issues</a>
 </li>
-</ul><p>Pull requests are very welcome! Make sure your patches are well tested.
+</ul>
+
+<p>Pull requests are very welcome! Make sure your patches are well tested.
 Ideally create a topic branch for every separate change you make.</p>
 
 <h2>
-<a name="-license-and-author" class="anchor" href="#-license-and-author"><span class="octicon octicon-link"></span></a><a name="license"></a> License and Author</h2>
+<a id="-license-and-author" class="anchor" href="#-license-and-author" aria-hidden="true"><span class="octicon octicon-link"></span></a><a name="license"></a> License and Author</h2>
 
 <p>Author:: <a href="https://github.com/fnichol">Fletcher Nichol</a> (<a href="mailto:fnichol@nichol.ca">fnichol@nichol.ca</a>) <a href="http://coderwall.com/fnichol"><img src="http://api.coderwall.com/fnichol/endorsecount.png" alt="endorse"></a></p>
 
@@ -231,7 +239,7 @@ See the License for the specific language governing permissions and
 limitations under the License.</p>
       </section>
       <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
