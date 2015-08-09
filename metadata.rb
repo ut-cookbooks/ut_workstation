@@ -23,6 +23,6 @@ depends "user",       "~> 0.3"
 depends "ut_base",    "~> 1.7"
 depends "python",     "~> 1.3"
 depends "ruby_install", "1.0.4" # pending mac patch upstream
-depends "xquartz"     # forked version, via git
+depends "xquartz",    "~> 1.1"
 depends "vagrant",    "~> 0.2"
 depends "virtualbox", "~> 1.0"
