@@ -17,9 +17,7 @@ describe "ut_workstation::_bashrc" do
       "bashrc" => {}
     )
     stub_data_bag_item("users", "beta").and_return(
-      "bashrc" => {
-        "update" => false
-      }
+      "bashrc" => true
     )
     stub_data_bag_item("users", "nilly").and_return(
       "bashrc" => nil
@@ -33,28 +31,12 @@ describe "ut_workstation::_bashrc" do
   end
 
   it "drops users with a falsy bashrc sub-hash" do
-    chef_run
-    installs = node["bashrc"]["user_installs"].map { |d| d["user"] }
-
-    expect(installs).to_not include("nilly")
-    expect(installs).to_not include("skippy")
+    expect(chef_run).to_not install_bashrc("nilly")
+    expect(chef_run).to_not install_bashrc("skippy")
   end
 
-  it "sets a default update => true for users" do
-    chef_run
-    user = node["bashrc"]["user_installs"].find { |d| d["user"] == "alpha" }
-
-    expect(user).to eq("user" => "alpha", "update" => true)
-  end
-
-  it "sets a custom update value for users" do
-    chef_run
-    user = node["bashrc"]["user_installs"].find { |d| d["user"] == "beta" }
-
-    expect(user).to eq("user" => "beta", "update" => false)
-  end
-
-  it "includes the bashrc::user recipe" do
-    expect(chef_run).to include_recipe "bashrc::user"
+  it "installs bashrc for users with a truthy hash value" do
+    expect(chef_run).to install_bashrc("alpha")
+    expect(chef_run).to install_bashrc("beta")
   end
 end
