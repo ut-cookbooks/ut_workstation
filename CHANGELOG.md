@@ -1,3 +1,10 @@
+## 1.4.2 / 2015-08-09
+
+### Improvements
+
+* Update Supermarket cookbook version badge on README. ([@fnichol][])
+
+
 ## 1.4.0 / 2015-08-09
 
 ### New features
