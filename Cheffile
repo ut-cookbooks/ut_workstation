@@ -4,7 +4,3 @@ site "https://supermarket.getchef.com/api/v1"
 
 cookbook "ut_workstation",
   :path => "."
-
-cookbook "bashrc",
-  :git => "https://github.com/fnichol/chef-bashrc.git",
-  :ref => "v0.3.4"
