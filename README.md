@@ -1,6 +1,6 @@
 # Unicorn Tears Workstation Chef Cookbook
 
-[![Cookbook Version](http://img.shields.io/cookbook/v/ut_base.svg)](https://supermarket.chef.io/cookbooks/ut_workstation)
+[![Cookbook Version](http://img.shields.io/cookbook/v/ut_workstation.svg)](https://supermarket.chef.io/cookbooks/ut_workstation)
 [![Build Status](https://travis-ci.org/ut-cookbooks/ut_workstation.png?branch=master)](https://travis-ci.org/ut-cookbooks/ut_workstation)
 
 * Website: http://ut-cookbooks.github.io/ut_workstation/
