@@ -43,19 +43,19 @@ additional platforms so they can be added.
 
 This cookbook depends on the following external cookbooks:
 
-* [apt](http://community.opscode.com/cookbooks/apt)
-* [bashrc](https://github.com/fnichol/chef-bashrc) (via Git)
-* [chruby](http://community.opscode.com/cookbooks/chruby)
-* [homebrew](http://community.opscode.com/cookbooks/homebrew)
-* [homesick](http://community.opscode.com/cookbooks/homesick)
-* [mac_os_x](http://community.opscode.com/cookbooks/mac_os_x)
-* [user](http://community.opscode.com/cookbooks/user)
-* [ut_base](http://community.opscode.com/cookbooks/ut_base)
-* [python](http://community.opscode.com/cookbooks/python)
-* [ruby_install](http://community.opscode.com/cookbooks/ruby_install)
-* [xquartz](http://community.opscode.com/cookbooks/xquartz) (currently forked)
-* [vagrant](http://community.opscode.com/cookbooks/vagrant)
-* [virtualbox](http://community.opscode.com/cookbooks/virtualbox)
+* [apt](https://supermarket.chef.io/cookbooks/apt)
+* [bashrc](https://supermarket.chef.io/cookbooks/bashrc)
+* [chruby](https://supermarket.chef.io/cookbooks/chruby)
+* [homebrew](https://supermarket.chef.io/cookbooks/homebrew)
+* [homesick](https://supermarket.chef.io/cookbooks/homesick)
+* [mac_os_x](https://supermarket.chef.io/cookbooks/mac_os_x)
+* [user](https://supermarket.chef.io/cookbooks/user)
+* [ut_base](https://supermarket.chef.io/cookbooks/ut_base)
+* [python](https://supermarket.chef.io/cookbooks/python)
+* [ruby_install](https://supermarket.chef.io/cookbooks/ruby_install)
+* [xquartz](https://supermarket.chef.io/cookbooks/xquartz)
+* [vagrant](https://supermarket.chef.io/cookbooks/vagrant)
+* [virtualbox](https://supermarket.chef.io/cookbooks/virtualbox)
 
 ## Recipes
 
