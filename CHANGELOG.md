@@ -1,25 +1,38 @@
+## 1.4.0 / 2015-08-09
+
+### New features
+
+* Drop support for zip and dmg-based package installs on Mac platforms. ([@fnichol][])
+* Use the newly release bashrc cookbook on the Supermarket ([@fnichol][])
+
+### Improvements
+
+* Update to ut_base 1.7.2. ([@fnichol][])
+* Update to xquartz version 1.1.0. ([@fnichol][])
+
+
 ## 1.3.0 / 2015-08-07
 
 ### New features
 
-* Support Chef 12+. (@fnichol)
-* Support Mac 10.10. (@fnichol)
-* Support Debian 8.1. (@fnichol)
+* Support Chef 12+. ([@fnichol][])
+* Support Mac 10.10. ([@fnichol][])
+* Support Debian 8.1. ([@fnichol][])
 
 ### Improvements
 
-* Update to chruby 0.3.9. (@fnichol)
-* Update VirtualBox's Mac URL to 5.0.0. (@fnichol)
-* Update to Vagrant version 1.7.4. (@fnichol)
-* Fix ownership of homebrew cache directories. (@fnichol)
-* Link all homebrew casks into /Application by default. (@fnichol)
+* Update to chruby 0.3.9. ([@fnichol][])
+* Update VirtualBox's Mac URL to 5.0.0. ([@fnichol][])
+* Update to Vagrant version 1.7.4. ([@fnichol][])
+* Fix ownership of homebrew cache directories. ([@fnichol][])
+* Link all homebrew casks into /Application by default. ([@fnichol][])
 
 
 ## 1.2.2 / 2014-09-15
 
 ### Improvements
 
-* Update xquartz dependency to 1.0.1 and off the git fork. (@fnichol)
+* Update xquartz dependency to 1.0.1 and off the git fork. ([@fnichol][])
 
 
 ## 1.2.0 / 2014-08-19
