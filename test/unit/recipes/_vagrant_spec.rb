@@ -11,18 +11,6 @@ describe "ut_workstation::_vagrant" do
 
   shared_examples "recipe includes" do
 
-    it "includes the virtualbox recipe, if node attribute is truthy" do
-      node.set["ut_workstation"]["install_virtualbox"] = true
-
-      expect(chef_run).to include_recipe("virtualbox")
-    end
-
-    it "does not include the virtualbox recipe, if node attribute is falsey" do
-      node.set["ut_workstation"]["install_virtualbox"] = false
-
-      expect(chef_run).to_not include_recipe("virtualbox")
-    end
-
     it "sets the vagrant version from ut_workstation node attribute" do
       node.set["ut_workstation"]["vagrant"]["version"] = "1.7.2"
 
@@ -43,6 +31,18 @@ describe "ut_workstation::_vagrant" do
     let(:platform)  { "ubuntu" }
     let(:version)   { "14.04" }
 
+    it "includes the virtualbox recipe, if node attribute is truthy" do
+      node.set["ut_workstation"]["install_virtualbox"] = true
+
+      expect(chef_run).to include_recipe("virtualbox")
+    end
+
+    it "does not include the virtualbox recipe, if node attribute is falsey" do
+      node.set["ut_workstation"]["install_virtualbox"] = false
+
+      expect(chef_run).to_not include_recipe("virtualbox")
+    end
+
     include_examples "recipe includes"
   end
 
@@ -53,13 +53,9 @@ describe "ut_workstation::_vagrant" do
 
     include_examples "recipe includes"
 
-    it "sets the virtualbox url from ut_workstation node attribute" do
-      node.set["ut_workstation"]["virtualbox"]["dmg"] =
-        "http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-OSX.dmg"
-      chef_run
-
-      expect(node["virtualbox"]["url"]).to eq(
-        "http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-OSX.dmg")
+    it "installs package from homebrew cask" do
+      expect(chef_run).to install_homebrew_cask("virtualbox")
+      expect(chef_run).to_not include_recipe("virtualbox")
     end
   end
 end

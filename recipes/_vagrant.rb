@@ -17,12 +17,16 @@
 # limitations under the License.
 #
 
-if platform_family?("mac_os_x")
-  node.set["virtualbox"]["url"] = node["ut_workstation"]["virtualbox"]["dmg"]
+if node["ut_workstation"]["install_virtualbox"]
+  if platform_family?("mac_os_x")
+    homebrew_cask "virtualbox"
+  else
+    include_recipe "virtualbox"
+  end
 end
+
 node.set["vagrant"]["version"] = node["ut_workstation"]["vagrant"]["version"]
 node.set["vagrant"]["url"] = vagrant_package_uri(node["vagrant"]["version"])
 node.set["vagrant"]["checksum"] = vagrant_sha256sum(node["vagrant"]["version"])
 
-include_recipe "virtualbox" if node["ut_workstation"]["install_virtualbox"]
-include_recipe "vagrant"    if node["ut_workstation"]["install_vagrant"]
+include_recipe "vagrant" if node["ut_workstation"]["install_vagrant"]

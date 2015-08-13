@@ -67,7 +67,6 @@ Main recipe which includes all internal recipes.
 
 | Key                                        | Description                                 | Type    | Default                     |
 |--------------------------------------------|---------------------------------------------|---------|-----------------------------|
-| `["ut_workstation"]["virtualbox"]["dmg"]`  | The download URL for Virtualbox on Mac OS X | String  | (see attributes/vagrant.rb) |
 | `["ut_workstation"]["vagrant"]["version"]` | The version of Vagrant to install           | String  | (see attributes/vagrant.rb) |
 | `["ut_workstation"]["install_virtualbox"]` | Whether or not to install VirtualBox        | Boolean | `true`                      |
 | `["ut_workstation"]["install_vagrant"]`    | Whether or not to install Vagrant           | Boolean | `true`                      |
