@@ -1,3 +1,10 @@
+## 1.5.0 / 2015-08-13
+
+### New features
+
+* Install VirtualBox via Homebrew Cask on Mac. ([@fnichol][])
+
+
 ## 1.4.2 / 2015-08-09
 
 ### Improvements
